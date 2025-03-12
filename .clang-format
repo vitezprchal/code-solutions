@@ -1,4 +1,5 @@
 ---
+# This will apply to both C and C++ files
 Language: Cpp
 BasedOnStyle: LLVM
 IndentWidth: 4
@@ -13,3 +14,14 @@ MaxEmptyLinesToKeep: 2
 KeepEmptyLinesAtTheStartOfBlocks: false
 SortIncludes: true
 AlignConsecutiveMacros: true
+
+# C++-specific settings
+AccessModifierOffset: -4
+NamespaceIndentation: All
+AlignConsecutiveAssignments: true
+AlignConsecutiveDeclarations: true
+AllowShortFunctionsOnASingleLine: Empty
+BreakConstructorInitializers: BeforeColon
+ConstructorInitializerAllOnOneLineOrOnePerLine: true
+FixNamespaceComments: true
+SpaceBeforeInheritanceColon: true

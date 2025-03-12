@@ -12,13 +12,21 @@ repos:
     hooks:
     -   id: clang-format
         args: [-i]
+        types: [c, c++]
+        files: \.(c|cpp|h|hpp)$
     -   id: cppcheck
         args: [
-            --enable=warning,performance,portability,
+            --enable=warning,performance,portability,style,
+            --std=c++17,
+            --language=c++,
             --suppress=missingIncludeSystem,
             --suppress=staticFunction,
-            --suppress=constParameterPointer
+            --suppress=constParameterPointer,
+            --suppress=noExplicitConstructor,
+            --suppress=unusedFunction
         ]
+        types: [c, c++]
+        files: \.(c|cpp)$
 
 -   repo: https://github.com/jumanjihouse/pre-commit-hooks
     rev: 3.0.0
